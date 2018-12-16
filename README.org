@@ -1,0 +1,8 @@
+* Intro
+  fedora-initramfs-builder is a script for crafting a feature rich initramfs for use as a rescue image and custom fedora installer. 
+
+* Goals
+  - feature rich at the expense of having a large initramfs
+  - easy to modify and update
+  - easy to add support for zfs
+  - easy platform on which to build an automated installation that bootstraps over ipxe
