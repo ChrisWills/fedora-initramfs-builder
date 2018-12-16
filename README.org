@@ -8,7 +8,7 @@
 
   In the case of a laptop which cannot rely on network booting all the time, I will create a bootable usb key with just grub and /boot for bootstraping - this   usb key can be removed once the system boots.
 
-  Keep complexity low and visibility high. I want this to be easy to understand even if that means boot times are long. I don't care much about boot times but  I care alot about reproducability and the ability to wipe a machine back to a known static quickly and automatically. 
+  Keep complexity low and visibility high. I want this to be easy to understand even if that means boot times are long. I don't care much about boot times but  I care alot about reproducability and the ability to wipe a machine back to a known state quickly and automatically. 
 
   This should also lay the ground-work for easier updates between fedora releases and ease of switching back to an old setup in the event of a catastrophic failure or user error.
 
