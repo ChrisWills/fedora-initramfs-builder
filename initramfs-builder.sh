@@ -24,12 +24,15 @@ echo "==> Installing pacakges"
 
 rpmdb --initdb --root ${SYSROOT}
 
-yum -y --installroot=${SYSROOT} --releasever=29 install fedora-release-29-6 systemd bash binutils kernel-4.19.8-300.fc29 dnf iproute NetworkManager iputils kernel-devel http://download.zfsonlinux.org/fedora/zfs-release.fc29.noarch.rpm openssh-server
+yum -y --installroot=${SYSROOT} --releasever=29 install fedora-release systemd bash binutils kernel dnf iproute NetworkManager iputils openssh-server 
+
+#rsync kexec-tools
 
 # TODO: setup authorized keys for root
 
 # TODO: copy over zfs stuff as binaries so we don't waste time and space compiling during boot
-yum -y --installroot=${SYSROOT} --releasever=29 install zfs
+#yum -y --installroot=${SYSROOT} --releasever=29 install http://download.zfsonlinux.org/fedora/zfs-release.fc29.noarch.rpm 
+#yum -y --installroot=${SYSROOT} --releasever=29 install zfs
 
 ln -s /usr/lib/systemd/systemd ${SYSROOT}/init
 
@@ -37,7 +40,7 @@ echo "==> Setting root password"
 set_root_pass ${SYSROOT}/etc/shadow
 
 echo "==> Cleaning image"
-rm -rf  var/cache/dnf/*
+rm -rf ${SYSROOT}/var/cache/dnf/*
 
 echo "==> Creating archive"
 cd ${SYSROOT}
